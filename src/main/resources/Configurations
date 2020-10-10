@@ -1,0 +1,21 @@
+Configurations:
+
+1) Anotación en clase principal de @EnableConfigServer.-
+2) Creación de una carpeta con los ficheros de configuración.
+El nombre de cada fichero tiene que coincidir con el nombre del microservicio.
+A su vez, si deseamos establecer el entorno, luego del nombre del microservicio
+se indica con un -{nombre de entorno}.
+
+Ej.:
+
+persons-microservice-dev.properties
+
+3) Indicación de la ruta de la carpeta con los ficheros mediante la propiedad
+en el application.properties ==>
+
+spring.cloud.config.server.git.uri=file:///
+
+4) Si se quiere tomar la configuración de un determinado entorno, en el 
+bootstrap.properties, del microservicio correspondiente, se agrega ==>
+
+spring.profile.active=dev
